@@ -179,6 +179,11 @@ def flash_test(board_id):
             ram_size = 0x4000
             rom_start = 0x00000000
             rom_size = 0x20000
+        elif target_type == "ncs36510":
+            ram_start = 0x3FFF4000
+            ram_size = 64*1024
+            rom_start = 0x00003000
+            rom_size = 0x000A0000
         else:
             raise Exception("The board is not supported by this test script.")
 
@@ -457,4 +462,3 @@ if __name__ == "__main__":
     test = FlashTest()
     result = [test.run(board)]
     test.print_perf_info(result)
-
