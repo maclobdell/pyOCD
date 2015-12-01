@@ -106,7 +106,8 @@ def basic_test(board_id, file):
         elif target_type == "ncs36510":
             addr = 0x3FFF4001
             size = 0x1102
-            addr_flash = 0x00003000            
+            addr_flash = 0x00003000
+            addr_bin = 0x00003000            
         else:
             raise Exception("A board is not supported by this test script.")
 
