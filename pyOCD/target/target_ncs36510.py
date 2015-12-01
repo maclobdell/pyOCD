@@ -26,7 +26,7 @@ RESET_ENABLE = (1 << 0)
 class NCS36510(CortexM):
 
     memoryMap = MemoryMap(
-        FlashRegion(    start=0,           length=0x152000,      blocksize=0x800, isBootMemory=True),
+        FlashRegion(    start=0x3000,           length=0x4C000,      blocksize=0x800, isBootMemory=True),
         RamRegion(      start=0x3FFF4000,  length=0xC000)
         )
 
