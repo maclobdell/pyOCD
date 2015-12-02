@@ -285,7 +285,7 @@ def basic_test(board_id, file):
         flash.erasePage(addr_flash + page_size)
         # Verify the 1st and 3rd page were not erased, and that the 2nd page is fully erased
         data = target.readBlockMemoryUnaligned8(addr_flash, page_size * 3)
-        expected = fill + [0xFF] * page_size + fill
+        expected = 4*fill + [0xFF] * page_size + 4*fill
         if data == expected:
             print "TEST PASSED"
         else:
