@@ -182,8 +182,10 @@ def flash_test(board_id):
         elif target_type == "ncs36510":
             ram_start = 0x3FFF4000
             ram_size = 64*1024
-            rom_start = 0x00003000
+            rom_start = 0x00002000
             rom_size = 0x0004C000
+            # Override clock since 10MHz is too fast
+            test_clock = 1000000
         else:
             raise Exception("The board is not supported by this test script.")
 
@@ -241,7 +243,6 @@ def flash_test(board_id):
 
         # Turn on extra checks for the next 4 tests
         flash.setFlashAlgoDebug(True)
-
         print "\r\n\r\n------ Test Basic Page Erase ------"
         info = flash.flashBlock(addr, data, False, False, progress_cb=print_progress)
         data_flashed = target.readBlockMemoryUnaligned8(addr, size)
