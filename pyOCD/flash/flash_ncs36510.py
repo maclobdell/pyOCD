@@ -77,16 +77,8 @@ flash_algo = {
     'analyzer_supported' : False,    
 };
               
-class Flash_ncs36510(Flash): 
+class Flash_ncs36510(Flash):
+     
     def __init__(self, target):
         super(Flash_ncs36510, self).__init__(target, flash_algo)
-    'begin_data' : 0x3fff4000 + 0x00000A00,
-    'begin_stack' : 0x3fff4800,
-    'page_size' : 0x00000800,
-    'min_program_length' : 0x00000800,
-    'analyzer_supported' : False,    
-};
               
-class Flash_ncs36510(Flash): 
-    def __init__(self, target):
-        super(Flash_ncs36510, self).__init__(target, flash_algo)
