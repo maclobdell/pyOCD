@@ -27,7 +27,7 @@ RESET_ENABLE = (1 << 0)
 class NCS36510(CoreSightTarget):
 
     memoryMap = MemoryMap(
-        FlashRegion(    start=0x2000,           length=0x50000,      blocksize=0x800, isBootMemory=True),
+        FlashRegion(    start=0x0000,           length=0x50000,      blocksize=0x800, isBootMemory=True),
         RamRegion(      start=0x3FFF4000,  length=0xC000)
         )
 
