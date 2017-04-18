@@ -186,6 +186,15 @@ def basic_test(board_id, file):
             print "pc: 0x%X" % target.readCoreRegister('pc')
 
         print "\r\n\r\n----- NEED TO HACK target_ncs36510.py to set flash start at 0x0 -----"
+
+        print "\r\n\r\n----- ERASE BOOTLOADER -----"
+        page_size = 0x800
+        flash.init()
+        
+        for i in range(0, 2):
+            address = addr_flash + page_size * i
+            flash.erasePage(address)
+
         print "\r\n\r\n----- FLASH NEW BOOTLOADER -----"
         flash.flashBinary(binary_file, addr_bin)
 
