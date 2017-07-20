@@ -29,6 +29,13 @@ from pyOCD.utility.conversion import float32beToU32be
 import logging
 
 def basic_test(board_id, file):
+    
+    mbed_list = MbedBoard.getAllConnectedBoards(close=True)
+    for mbed in mbed_list:
+        if mbed.unique_id.startswith("1200"):
+            board_id = mbed.unique_id
+            print 'Found Board ID ' + board_id
+            
     with MbedBoard.chooseBoard(board_id=board_id) as board:
         addr = 0
         size = 0
