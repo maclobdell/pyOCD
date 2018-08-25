@@ -42,6 +42,7 @@ BOARD_ID_TO_INFO = {
     "0220": BoardInfo(  "FRDM-KL46Z",           "kl46z",            "l1_kl46z.bin",         ),
     "0224": BoardInfo(  "FRDM-K28F",            "k28f15",           "l1_k28f.bin",          ),
     "0225": BoardInfo(  "FRDM-K32W042",         "k32w042s",         "l1_k32w042s.bin",      ),
+    "0228": BoardInfo(  "RapidIot",             "k64f",             "l1_k64f.bin",          ),
     "0230": BoardInfo(  "FRDM-K20D50M",         "k20d50m",          "l1_k20d50m.bin",       ),
     "0231": BoardInfo(  "FRDM-K22F",            "k22f",             "l1_k22f.bin",          ),
     "0240": BoardInfo(  "FRDM-K64F",            "k64f",             "l1_k64f.bin",          ),
@@ -97,4 +98,3 @@ BOARD_ID_TO_INFO = {
     "C004": BoardInfo(  "tinyK20",              "k20d50m",          "l1_k20d50m.bin",       ),
     "C006": BoardInfo(  "VBLUno51",             "nrf51",            "l1_nrf51.bin",         ),
     }
-
